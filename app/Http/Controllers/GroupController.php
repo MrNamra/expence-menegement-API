@@ -64,7 +64,7 @@ class GroupController extends Controller
                 $group->update([
                     'name' => $request->input('name'),
                     'dec' => $dec,
-                    'total' => $total,
+                    'totle' => $total,
                 ]);
 
                 return response()->json(['message' => 'success'],200);
@@ -81,7 +81,7 @@ class GroupController extends Controller
             $data = group::create([
                 'name' => $request->input('name'),
                 'dec' => $request->input('dec'),
-                'total' => $request->total,
+                'totle' => $request->total,
                 'user_id' => $user_id,
             ]);
             return response()->json(['message' => 'success'],200);
@@ -159,7 +159,7 @@ class GroupController extends Controller
                     }
                 }
                 $group->update([
-                    'totla' => $totla
+                    'totle' => $totla
                 ]);
             }else{
                 return response()->json(['error' => 'Data not Found!'],204);
