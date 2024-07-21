@@ -21,7 +21,6 @@ class ProductController extends Controller
         ]);
         
         $product = Product::create($request->all());
-        // dd($product);
 
         return response()->json(['data'=>new ProductResource($product), 'message'=>'Product Created Successfully']);
     }

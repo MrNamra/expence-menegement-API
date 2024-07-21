@@ -19,7 +19,6 @@ class GroupController extends Controller
 
             return response()->json(["message" => 'success!', 'data' => $data],200);
         }catch(Exception $e){
-            dd($e);
             return response()->json(["error" => 'oops, Something Went wrong!'],500);
         }
     }
@@ -51,7 +50,6 @@ class GroupController extends Controller
                 return response()->json(['error' => 'Data Not Found!'],204);
             }
         }catch(Exception $e){
-            dd($e);
             return response()->json(['error' => 'Something Went Wrong!'],500);
         }
     }
@@ -88,7 +86,6 @@ class GroupController extends Controller
             ]);
             return response()->json(['message' => 'success'],200);
         }catch(Exception $e){
-            dd($e);
             return response()->json(['error' => 'Something went wrong!'],500);
         }
     }
@@ -111,7 +108,6 @@ class GroupController extends Controller
                 return response()->json(['error' => 'Data Not Found!'],204);
             }
         }catch(Exception $e){
-            dd($e);
             return response()->json(['error' => 'Something Went Wrong!'],500);
         }
     }
@@ -131,7 +127,6 @@ class GroupController extends Controller
                 return response()->json(['error' => 'Data Not Found!'],204);
             }
         }catch(Exception $e){
-            dd($e);
             return response()->json(['error' => 'Something Went Wrong!'],500);
         }
     }
@@ -170,7 +165,6 @@ class GroupController extends Controller
                 return response()->json(['error' => 'Data not Found!'],204);
             }
         }catch(Exception $e){
-            dd($e);
             return response()->json(['error' => 'Something Went Wrong!'],500);
         }
     }
@@ -219,9 +213,7 @@ class GroupController extends Controller
             }else{
                 return response()->json(['error' => 'Data Not Found!'],404);
             }
-            dd($group_info);
         }catch(Exception $e){
-            dd($e);
             return response()->json(['error' => 'Something Went Wrong!'],500);
         }
     }

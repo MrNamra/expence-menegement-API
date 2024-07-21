@@ -16,7 +16,6 @@ class HomeController extends Controller
             $data = expense::select('id','title','dec','price','created_at')->where('user_id', $user_id)->get();
             return response()->json(["message" => 'success', 'data' => $data],200);
         }catch(\Exception $e){
-            dd($e);
             return response()->json(["error" => 'oops, Something Went wrong!'],500);
         }
     }
@@ -30,11 +29,9 @@ class HomeController extends Controller
                 'dec'=> $request->input('dec'),
                 'price'=> $request->input('price'),
             ]);
-            dd($data);
             $data = expense::where('user_id', $user_id)->get();
             return response()->json(["message" => 'success', 'data' => $data],200);
         }catch(\Exception $e){
-            dd($e);
             return response()->json(["error" => 'oops, Something Went wrong!'],500);
         }
     }
@@ -52,7 +49,6 @@ class HomeController extends Controller
 
             return response()->json(["message" => 'success'],200);
         }catch(\Exception $e){
-            dd($e);
             return response()->json(["error" => 'oops, Something Went wrong!'],500);
         }
     }
@@ -67,7 +63,6 @@ class HomeController extends Controller
             }
             return response()->json([ 'data' => $data, "message" => 'success'],200);
         }catch(\Exception $e){
-            dd($e);
             return response()->json(["error" => 'oops, Something Went wrong!'],500);
         }
     }
@@ -80,7 +75,6 @@ class HomeController extends Controller
             $data->delete();
             return response()->json(["message" => 'Deleted successfully!'],200);
         }catch(\Exception $e){
-            dd($e);
             return response()->json(["error" => 'oops, Something Went wrong!'],500);
         }
     }
