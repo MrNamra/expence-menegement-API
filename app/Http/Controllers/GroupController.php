@@ -139,7 +139,7 @@ class GroupController extends Controller
             $amm_to_paid = $request->input('amm_to_paid');
             $isPaid = $request->input('isPaid');
             $paidby = $request->input('paidby');
-            $totla = $request->input('totla');
+            $totla = $request->input('total');
             $group = group::where('id', $id)->where('user_id', $user_id)->first();
             $group_info = null;
             if($group){
